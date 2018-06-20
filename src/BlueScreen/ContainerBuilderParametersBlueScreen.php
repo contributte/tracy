@@ -1,10 +1,10 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Contributte\Tracy\BlueScreen;
 
-use Exception;
 use Nette\DI\ContainerBuilder;
 use Nette\InvalidArgumentException;
+use Throwable;
 use Tracy\Dumper;
 use Tracy\Helpers;
 
@@ -14,27 +14,23 @@ class ContainerBuilderParametersBlueScreen
 	/** @var ContainerBuilder */
 	private $builder;
 
-	/**
-	 * @param ContainerBuilder $builder
-	 */
 	public function __construct(ContainerBuilder $builder)
 	{
 		$this->builder = $builder;
 	}
 
 	/**
-	 * @param Exception $e
-	 * @return array|null
+	 * @return string[]|null
 	 */
-	public function __invoke($e)
+	public function __invoke(?Throwable $e): ?array
 	{
-		if (!$e) return NULL;
-		if (!($e instanceof InvalidArgumentException)) return NULL;
-		if (!($trace = Helpers::findTrace($e->getTrace(), 'Nette\DI\Compiler::compile'))) return NULL;
+		if ($e === null) return null;
+		if (!($e instanceof InvalidArgumentException)) return null;
+		if (!($trace = Helpers::findTrace($e->getTrace(), 'Nette\DI\Compiler::compile'))) return null;
 
 		return [
 			'tab' => 'ContainerBuilder - parameters',
-			'panel' => Dumper::toHtml($this->builder->parameters, [Dumper::LIVE => TRUE, Dumper::COLLAPSE => FALSE]),
+			'panel' => Dumper::toHtml($this->builder->parameters, [Dumper::LIVE => true, Dumper::COLLAPSE => false]),
 		];
 	}
 
