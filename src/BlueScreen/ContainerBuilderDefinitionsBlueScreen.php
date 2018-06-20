@@ -1,10 +1,10 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Contributte\Tracy\BlueScreen;
 
-use Exception;
 use Nette\DI\ContainerBuilder;
 use Nette\DI\ServiceCreationException;
+use Throwable;
 use Tracy\Dumper;
 use Tracy\Helpers;
 
@@ -14,39 +14,35 @@ class ContainerBuilderDefinitionsBlueScreen
 	/** @var ContainerBuilder */
 	private $builder;
 
-	/**
-	 * @param ContainerBuilder $builder
-	 */
 	public function __construct(ContainerBuilder $builder)
 	{
 		$this->builder = $builder;
 	}
 
 	/**
-	 * @param Exception $e
-	 * @return array|null
+	 * @return string[]|null
 	 */
-	public function __invoke($e)
+	public function __invoke(?Throwable $e): ?array
 	{
-		if (!$e) return NULL;
-		if (!($e instanceof ServiceCreationException)) return NULL;
-		if (!($trace = Helpers::findTrace($e->getTrace(), 'Nette\DI\Compiler::compile'))) return NULL;
+		if ($e === null) return null;
+		if (!($e instanceof ServiceCreationException)) return null;
+		if (!($trace = Helpers::findTrace($e->getTrace(), 'Nette\DI\Compiler::compile'))) return null;
 
 		$parts = [];
 
 		// Single definition
 		preg_match("#Class .+ used in service '([a-zA-Z0-9_]+)' not found.#", $e->getMessage(), $matches);
 		if ($matches) {
-			list ($all, $serviceName) = $matches;
+			[$all, $serviceName] = $matches;
 			$parts[] = sprintf(
 				"<div><h3>Definition for '%s'</h3>%s</div>",
 				$serviceName,
-				Dumper::toHtml($this->builder->getDefinition($serviceName), [Dumper::LIVE => TRUE, Dumper::COLLAPSE => FALSE])
+				Dumper::toHtml($this->builder->getDefinition($serviceName), [Dumper::LIVE => true, Dumper::COLLAPSE => false])
 			);
 		}
 
 		// All definitions
-		$parts[] = sprintf('<div><h3>All definitions</h3>%s</div>', Dumper::toHtml($this->builder->getDefinitions(), [Dumper::LIVE => TRUE, Dumper::COLLAPSE => FALSE]));
+		$parts[] = sprintf('<div><h3>All definitions</h3>%s</div>', Dumper::toHtml($this->builder->getDefinitions(), [Dumper::LIVE => true, Dumper::COLLAPSE => false]));
 
 		return [
 			'tab' => 'ContainerBuilder - definitions',
