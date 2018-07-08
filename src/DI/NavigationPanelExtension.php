@@ -27,7 +27,6 @@ class NavigationPanelExtension extends CompilerExtension
 		$linkGenerator = '@' . $builder->getByType(LinkGenerator::class);
 		$presenterFactory = '@' . $builder->getByType(IPresenterFactory::class);
 		$presenters = $builder->findByType(Presenter::class);
-
 		foreach ($presenters as $key => $presenter) {
 			$presenters[$key] = $presenter->getType();
 		}
