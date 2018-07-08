@@ -33,6 +33,7 @@ composer require contributte/tracy
 ## Overview
 
 - [TracyBlueScreensExtension - better BlueScreen panels](https://github.com/contributte/tracy/blob/master/.docs/README.md#tracybluescreensextension)
+- [NavigationPanelExtension - navigate easily through all presenters](https://github.com/contributte/tracy/blob/master/.docs/README.md#navigationpanelextension)
 
 ## Maintainers
 
