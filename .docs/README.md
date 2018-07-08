@@ -34,3 +34,5 @@ Links are generated for presenters which:
 - Are registered into DIC (should be all of them, if application is not misconfigured)
 - Inherits from Nette\Application\UI\Presenter
 - Have at least one action or render method without parameters (or with optional parameters only)
+
+![Navigation panel](assets/navigation-panel.png?raw=true)
