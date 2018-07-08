@@ -24,8 +24,6 @@ class NavigationPanelExtension extends CompilerExtension
 	{
 		$builder = $this->getContainerBuilder();
 
-		$linkGenerator = '@' . $builder->getByType(LinkGenerator::class);
-		$presenterFactory = '@' . $builder->getByType(IPresenterFactory::class);
 		$presenters = $builder->findByType(Presenter::class);
 		foreach ($presenters as $key => $presenter) {
 			$presenters[$key] = $presenter->getType();
@@ -34,7 +32,10 @@ class NavigationPanelExtension extends CompilerExtension
 		$builder
 			->getDefinition('tracy.bar')
 			->addSetup('addPanel', [
-				new Statement(NavigationPanel::class, [$presenterFactory, $linkGenerator, $presenters]),
+				new Statement(
+					NavigationPanel::class,
+					[$builder->getDefinitionByType(IPresenterFactory::class), $builder->getDefinitionByType(LinkGenerator::class), $presenters]
+				),
 				$this->prefix('navigation'),
 			]);
 	}
