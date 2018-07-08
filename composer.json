@@ -6,6 +6,7 @@
     "tracy",
     "profile",
     "bluescreen",
+    "navigation",
     "develop"
   ],
   "type": "library",
@@ -17,6 +18,10 @@
     {
       "name": "Milan Felix Šulc",
       "homepage": "https://f3l1x.io"
+    },
+    {
+      "name": "Marek Bartoš",
+      "homepage": "https://marek-bartos.cz"
     }
   ],
   "require": {
@@ -26,15 +31,24 @@
   "require-dev": {
     "ninjify/qa": "^0.8.0",
     "ninjify/nunjuck": "^0.2.0",
-    "nette/di": "~2.4.12"
+    "nette/application": "~2.4.13",
+    "nette/di": "~2.4.13",
+    "nette/http": "~2.4.9"
   },
   "conflict": {
-    "nette/di": "<2.4.12",
+    "nette/application": "<2.4.13",
+    "nette/di": "<2.4.13",
+    "nette/http": "<2.4.9",
     "nette/utils": "<2.5.2"
   },
   "autoload": {
     "psr-4": {
       "Contributte\\Tracy\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\Fixtures\\": "tests/fixtures"
     }
   },
   "scripts": {
