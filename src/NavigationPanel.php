@@ -45,7 +45,7 @@ class NavigationPanel implements IBarPanel
 	{
 		ob_start();
 		require __DIR__ . '/Templates/NavigationPanel/tab.phtml';
-		return ob_get_clean();
+		return (string) ob_get_clean();
 	}
 
 	public function getPanel(): string
@@ -53,7 +53,7 @@ class NavigationPanel implements IBarPanel
 		$tree = $this->tree;
 		ob_start();
 		require __DIR__ . '/Templates/NavigationPanel/panel.phtml';
-		return ob_get_clean();
+		return (string) ob_get_clean();
 	}
 
 	/**
@@ -95,7 +95,7 @@ class NavigationPanel implements IBarPanel
 				}
 
 				try {
-					$link = $this->linkGenerator->link($module ? sprintf('%s:%s:%s', $module, $presenter, $action) : sprintf('%s:%s', $presenter, $action));
+					$link = $this->linkGenerator->link($module !== '' ? sprintf('%s:%s:%s', $module, $presenter, $action) : sprintf('%s:%s', $presenter, $action));
 					$tree[$module][$presenter][$action] = $link;
 				} catch (InvalidLinkException $e) {
 					// Just trying generate link
@@ -104,7 +104,7 @@ class NavigationPanel implements IBarPanel
 
 			if (!isset($tree[$module][$presenter]['default'])) {
 				try {
-					$link = $this->linkGenerator->link($module ? sprintf('%s:%s:', $module, $presenter) : sprintf('%s:', $presenter));
+					$link = $this->linkGenerator->link($module !== '' ? sprintf('%s:%s:', $module, $presenter) : sprintf('%s:', $presenter));
 					$tree[$module][$presenter]['default'] = $link;
 				} catch (InvalidLinkException $e) {
 					// Just trying generate link
