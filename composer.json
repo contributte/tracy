@@ -31,12 +31,12 @@
   "require-dev": {
     "ninjify/qa": "^0.8.0",
     "ninjify/nunjuck": "^0.2.0",
-    "nette/application": "~2.4.13",
+    "nette/application": "~2.4.12",
     "nette/di": "~2.4.13",
     "nette/http": "~2.4.9"
   },
   "conflict": {
-    "nette/application": "<2.4.13",
+    "nette/application": "<2.4.12",
     "nette/di": "<2.4.13",
     "nette/http": "<2.4.9",
     "nette/utils": "<2.5.2"
