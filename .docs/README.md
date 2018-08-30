@@ -26,7 +26,7 @@ extensions:
 
 ```yaml
 extensions:
-    tracy.navigation: Contributte\Tracy\DI\NavigationTracyPanel
+    tracy.navigation: Contributte\Tracy\DI\NavigationPanelExtension
 ```
 
 Links are generated for presenters which:
