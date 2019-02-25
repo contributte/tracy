@@ -26,7 +26,7 @@ class ContainerBuilderDefinitionsBlueScreen
 	{
 		if ($e === null) return null;
 		if (!($e instanceof ServiceCreationException)) return null;
-		if (!($trace = Helpers::findTrace($e->getTrace(), 'Nette\DI\Compiler::compile'))) return null;
+		if (Helpers::findTrace($e->getTrace(), 'Nette\DI\Compiler::compile') === null) return null;
 
 		$parts = [];
 
