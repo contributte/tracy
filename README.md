@@ -10,7 +10,7 @@
 [![Downloads this Month](https://img.shields.io/packagist/dm/contributte/tracy.svg?style=flat-square)](https://packagist.org/packages/contributte/tracy)
 [![Downloads total](https://img.shields.io/packagist/dt/contributte/tracy.svg?style=flat-square)](https://packagist.org/packages/contributte/tracy)
 [![Latest stable](https://img.shields.io/packagist/v/contrisbutte/tracy.svg?style=flat-square)](https://packagist.org/packages/contributte/tracy)
-[![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat)](https://github.com/phpstan/phpstan)
+[![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat-square)](https://github.com/phpstan/phpstan)
 
 ## Discussion / Help
 
