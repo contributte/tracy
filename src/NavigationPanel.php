@@ -44,7 +44,7 @@ class NavigationPanel implements IBarPanel
 	public function getTab(): string
 	{
 		ob_start();
-		require __DIR__ . '/Templates/NavigationPanel/tab.phtml';
+		require __DIR__ . '/templates/NavigationPanel/tab.phtml';
 		return (string) ob_get_clean();
 	}
 
@@ -52,7 +52,7 @@ class NavigationPanel implements IBarPanel
 	{
 		$tree = $this->tree;
 		ob_start();
-		require __DIR__ . '/Templates/NavigationPanel/panel.phtml';
+		require __DIR__ . '/templates/NavigationPanel/panel.phtml';
 		return (string) ob_get_clean();
 	}
 

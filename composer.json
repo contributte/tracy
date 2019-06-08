@@ -23,14 +23,13 @@
     }
   ],
   "require": {
-    "php": ">= 7.1",
+    "php": "^7.2",
     "tracy/tracy": "~2.6.0"
   },
   "require-dev": {
-    "nette/application": "~2.4.12",
-    "nette/di": "~2.4.13",
-    "nette/http": "~2.4.9",
-    "nette/utils": "~2.5.3",
+    "nette/application": "~3.0.0",
+    "nette/di": "~3.0.0",
+    "nette/http": "~3.0.1",
     "ninjify/nunjuck": "^0.2.0",
     "ninjify/qa": "^0.8.0",
     "phpstan/extension-installer": "^1.0",
@@ -40,10 +39,7 @@
     "phpstan/phpstan-strict-rules": "^0.11"
   },
   "conflict": {
-    "nette/application": "<2.4.12",
-    "nette/di": "<2.4.13",
-    "nette/http": "<2.4.9",
-    "nette/utils": "<2.5.2"
+    "nette/di": "<3.0.0"
   },
   "autoload": {
     "psr-4": {
@@ -62,7 +58,7 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "0.4.x-dev"
+      "dev-master": "0.5.x-dev"
     }
   }
 }

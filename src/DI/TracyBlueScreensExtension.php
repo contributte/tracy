@@ -7,7 +7,7 @@ use Contributte\Tracy\BlueScreen\ContainerBuilderParametersBlueScreen;
 use Nette\DI\CompilerExtension;
 use Tracy\Debugger;
 
-final class TracyBlueScreensExtension extends CompilerExtension
+class TracyBlueScreensExtension extends CompilerExtension
 {
 
 	public function loadConfiguration(): void

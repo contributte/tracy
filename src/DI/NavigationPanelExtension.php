@@ -7,18 +7,11 @@ use Nette\Application\IPresenterFactory;
 use Nette\Application\LinkGenerator;
 use Nette\Application\UI\Presenter;
 use Nette\DI\CompilerExtension;
-use Nette\DI\Statement;
+use Nette\DI\Definitions\Statement;
+use Nette\DI\ServiceDefinition;
 
 class NavigationPanelExtension extends CompilerExtension
 {
-
-	/** @var mixed[] */
-	private $defaults = [];
-
-	public function loadConfiguration(): void
-	{
-		$this->validateConfig($this->defaults);
-	}
 
 	public function beforeCompile(): void
 	{
@@ -26,11 +19,13 @@ class NavigationPanelExtension extends CompilerExtension
 
 		$presenters = $builder->findByType(Presenter::class);
 		foreach ($presenters as $key => $presenter) {
+			assert($presenter instanceof ServiceDefinition);
 			$presenters[$key] = $presenter->getType();
 		}
 
-		$builder
-			->getDefinition('tracy.bar')
+		$barDefinition = $builder->getDefinition('tracy.bar');
+		assert($barDefinition instanceof ServiceDefinition);
+		$barDefinition
 			->addSetup('addPanel', [
 				new Statement(
 					NavigationPanel::class,
