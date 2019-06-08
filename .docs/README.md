@@ -1,11 +1,20 @@
-# Tracy(debugging)
+# Contributte Tracy (debugging)
+
+Tuned Tracy Bars/Panels/BlueScreens for easy-developing.
 
 ## Content
 
-- [TracyBlueScreensExtension - better BlueScreen panels](#tracybluescreensextension)
-- [NavigationPanelExtension - navigate easily through all presenters](#navigationpanelextension)
+- [Setup](#setup)
+- [TracyBlueScreens - better BlueScreen panels](#tracybluescreen)
+- [NavigationPanel - navigate easily through all presenters](#navigationpanel)
 
-## TracyBlueScreensExtension
+## Setup
+
+```bash
+composer require contributte/tracy
+```
+
+## TracyBlueScreens
 
 `TracyBlueScreensExtension` adds a few BlueScreen panels for easier debugging.
 
@@ -20,7 +29,7 @@ extensions:
 [container-builder-parameters]: https://raw.githubusercontent.com/contributte/tracy/master/.docs/assets/container-builder-parameters.png "Container Builder - parameters"
 [container-builder-definitions]: https://raw.githubusercontent.com/contributte/tracy/master/.docs/assets/container-builder-definitions.png "Container Builder - definitions"
 
-## NavigationPanelExtension
+## NavigationPanel
 
 `NavigationPanelExtension` adds a Tracy bar panel for navigating across all presenters.
 

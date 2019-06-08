@@ -1,8 +1,6 @@
-# Contributte > Tracy (debugging)
+# Contributte Tracy (debugging)
 
-:sunglasses: Tuned Tracy Bars/Panels/BlueScreens for easy-developing.
-
------
+Tuned Tracy Bars/Panels/BlueScreens for easy-developing.
 
 [![Build Status](https://img.shields.io/travis/contributte/tracy.svg?style=flat-square)](https://travis-ci.org/contributte/tracy)
 [![Code coverage](https://img.shields.io/coveralls/contributte/tracy.svg?style=flat-square)](https://coveralls.io/r/contributte/tracy)
@@ -16,11 +14,11 @@
 
 [![Join the chat](https://img.shields.io/gitter/room/contributte/contributte.svg?style=flat-square)](http://bit.ly/ctteg)
 
-## Install
+## Documentation
 
-```
-composer require contributte/tracy
-```
+- [Setup](.docs/README.md#setup)
+- [TracyBlueScreens - better BlueScreen panels](.docs/README.md#tracybluescreens)
+- [NavigationPanel - navigate easily through all presenters](.docs/README.md#navigationpanel)
 
 ## Versions
 
@@ -29,11 +27,6 @@ composer require contributte/tracy
 | dev         | `^0.4`  | `master` | `>= 7.1` |
 | stable      | `^0.3`  | `master` | `>= 7.1` |
 | stable      | `^0.1`  | `master` | `>= 5.6` |
-
-## Overview
-
-- [TracyBlueScreensExtension - better BlueScreen panels](https://github.com/contributte/tracy/blob/master/.docs/README.md#tracybluescreensextension)
-- [NavigationPanelExtension - navigate easily through all presenters](https://github.com/contributte/tracy/blob/master/.docs/README.md#navigationpanelextension)
 
 ## Maintainers
 
@@ -57,7 +50,5 @@ composer require contributte/tracy
     </tr>
   </tbody>
 </table>
-
----
 
 Thank you for testing, reporting and contributing.
