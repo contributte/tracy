@@ -24,9 +24,17 @@ class ContainerBuilderDefinitionsBlueScreen
 	 */
 	public function __invoke(?Throwable $e): ?array
 	{
-		if ($e === null) return null;
-		if (!($e instanceof ServiceCreationException)) return null;
-		if (Helpers::findTrace($e->getTrace(), 'Nette\DI\Compiler::compile') === null) return null;
+		if ($e === null) {
+			return null;
+		}
+
+		if (!($e instanceof ServiceCreationException)) {
+			return null;
+		}
+
+		if (Helpers::findTrace($e->getTrace(), 'Nette\DI\Compiler::compile') === null) {
+			return null;
+		}
 
 		$parts = [];
 

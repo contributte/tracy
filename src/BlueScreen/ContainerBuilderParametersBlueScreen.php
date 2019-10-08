@@ -24,9 +24,17 @@ class ContainerBuilderParametersBlueScreen
 	 */
 	public function __invoke(?Throwable $e): ?array
 	{
-		if ($e === null) return null;
-		if (!($e instanceof InvalidArgumentException)) return null;
-		if (Helpers::findTrace($e->getTrace(), 'Nette\DI\Compiler::compile') === null) return null;
+		if ($e === null) {
+			return null;
+		}
+
+		if (!($e instanceof InvalidArgumentException)) {
+			return null;
+		}
+
+		if (Helpers::findTrace($e->getTrace(), 'Nette\DI\Compiler::compile') === null) {
+			return null;
+		}
 
 		return [
 			'tab' => 'ContainerBuilder - parameters',
