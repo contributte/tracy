@@ -9,13 +9,31 @@ use Nette\Application\UI\Presenter;
 use Nette\DI\CompilerExtension;
 use Nette\DI\Definitions\Statement;
 use Nette\DI\ServiceDefinition;
+use Nette\Schema\Expect;
+use Nette\Schema\Schema;
+use stdClass;
 
+/**
+ * @property-read stdClass $config
+ */
 class NavigationPanelExtension extends CompilerExtension
 {
+
+	public function getConfigSchema(): Schema
+	{
+		return Expect::structure([
+			'debug' => Expect::bool(false),
+		]);
+	}
 
 	public function beforeCompile(): void
 	{
 		$builder = $this->getContainerBuilder();
+		$config = $this->config;
+
+		if (!$config->debug) {
+			return;
+		}
 
 		$presenters = $builder->findByType(Presenter::class);
 		foreach ($presenters as $key => $presenter) {

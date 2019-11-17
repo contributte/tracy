@@ -28,6 +28,7 @@ test(function (): void {
 		$compiler->addConfig(
 			[
 				'services' => [RouterFactory::class . '::createRouter'],
+				'tracy.navigation' => ['debug' => true],
 			]
 		);
 	}, time());
