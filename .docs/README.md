@@ -36,6 +36,9 @@ extensions:
 ```yaml
 extensions:
     tracy.navigation: Contributte\Tracy\DI\NavigationPanelExtension
+
+tracy.navigation:
+    debug: %debugMode%
 ```
 
 Links are generated for presenters which:
