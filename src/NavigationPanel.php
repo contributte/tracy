@@ -19,14 +19,14 @@ class NavigationPanel implements IBarPanel
 	/** @var LinkGenerator */
 	private $linkGenerator;
 
-	/** @var string[] */
+	/** @var string[]&class-string<object>[] */
 	private $presenters;
 
 	/** @var mixed[] */
 	private $tree = [];
 
 	/**
-	 * @param string[] $presenters
+	 * @param string[]&class-string<object>[] $presenters
 	 */
 	public function __construct(
 		PresenterFactory $presenterFactory,
