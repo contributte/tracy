@@ -50,6 +50,7 @@ class NavigationPanel implements IBarPanel
 
 	public function getPanel(): string
 	{
+		// phpcs:ignore
 		$tree = $this->tree;
 		ob_start();
 		require __DIR__ . '/templates/NavigationPanel/panel.phtml';

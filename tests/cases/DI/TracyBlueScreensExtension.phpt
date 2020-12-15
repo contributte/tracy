@@ -21,9 +21,7 @@ function getPanelsCount(BlueScreen $blueScreen): array
 	$rf = new ReflectionClass($blueScreen);
 	$panelsrf = $rf->getProperty('panels');
 	$panelsrf->setAccessible(true);
-	$panels = $panelsrf->getValue($blueScreen);
-
-	return $panels;
+	return $panelsrf->getValue($blueScreen);
 }
 
 test(function (): void {

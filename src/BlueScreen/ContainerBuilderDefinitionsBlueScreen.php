@@ -41,7 +41,7 @@ class ContainerBuilderDefinitionsBlueScreen
 		// Single definition
 		preg_match("#Class .+ used in service '([a-zA-Z0-9_]+)' not found.#", $e->getMessage(), $matches);
 		if ($matches) {
-			[$all, $serviceName] = $matches;
+			[, $serviceName] = $matches;
 			$parts[] = sprintf(
 				"<div><h3>Definition for '%s'</h3>%s</div>",
 				$serviceName,
