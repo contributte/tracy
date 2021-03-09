@@ -22,7 +22,7 @@ Website ðŸš€ <a href="https://contributte.org">contributte.org</a> | Contact ðŸ‘
 
 To install latest version of `contributte/tracy` use [Composer](https://getcomposer.com).
 
-```
+```bash
 composer require contributte/tracy
 ```
 
