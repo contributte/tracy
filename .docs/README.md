@@ -18,9 +18,9 @@ composer require contributte/tracy
 
 `TracyBlueScreensExtension` adds a few BlueScreen panels for easier debugging.
 
-```yaml
+```neon
 extensions:
-    tracy.bluescreens: Contributte\Tracy\DI\TracyBlueScreensExtension
+	tracy.bluescreens: Contributte\Tracy\DI\TracyBlueScreensExtension
 ```
 
 ![Container Builder - parameters][container-builder-parameters]
@@ -33,12 +33,12 @@ extensions:
 
 `NavigationPanelExtension` adds a Tracy bar panel for navigating across all presenters.
 
-```yaml
+```neon
 extensions:
-    tracy.navigation: Contributte\Tracy\DI\NavigationPanelExtension
+	tracy.navigation: Contributte\Tracy\DI\NavigationPanelExtension
 
 tracy.navigation:
-    debug: %debugMode%
+	debug: %debugMode%
 ```
 
 Links are generated for presenters which:
