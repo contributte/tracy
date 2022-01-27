@@ -1,6 +1,6 @@
 {
   "name": "contributte/tracy",
-  "description": "Tuned Tracy Bars/Panels/BlueScreens for easy-developing",
+  "description": "Nette Tracy extensions for easy-developing",
   "keywords": [
     "nette",
     "tracy",
@@ -16,19 +16,15 @@
     {
       "name": "Milan Felix Šulc",
       "homepage": "https://f3l1x.io"
-    },
-    {
-      "name": "Marek Bartoš",
-      "homepage": "https://marek-bartos.cz"
     }
   ],
   "require": {
     "php": ">=7.2",
-    "tracy/tracy": "^2.7.0"
+    "tracy/tracy": "^2.9.0"
   },
   "require-dev": {
     "nette/application": "^3.0.0",
-    "nette/di": "~3.0.0",
+    "nette/di": "^3.0.0",
     "nette/http": "^3.0.1",
     "ninjify/nunjuck": "^0.4",
     "ninjify/qa": "^0.12",
