@@ -3,12 +3,12 @@
 namespace Contributte\Tracy\DI;
 
 use Contributte\Tracy\NavigationPanel;
+use Contributte\Tracy\ServiceBuilder;
 use Nette\Application\IPresenterFactory;
 use Nette\Application\LinkGenerator;
 use Nette\Application\UI\Presenter;
 use Nette\DI\CompilerExtension;
 use Nette\DI\Definitions\Statement;
-use Nette\DI\ServiceDefinition;
 use Nette\Schema\Expect;
 use Nette\Schema\Schema;
 use stdClass;
@@ -28,22 +28,21 @@ class NavigationPanelExtension extends CompilerExtension
 
 	public function beforeCompile(): void
 	{
-		$builder = $this->getContainerBuilder();
-		$config = $this->config;
+		$builder = ServiceBuilder::of($this);
 
-		if (!$config->debug) {
+		if (!$this->config->debug) {
 			return;
 		}
 
-		$presenters = $builder->findByType(Presenter::class);
-		foreach ($presenters as $key => $presenter) {
-			assert($presenter instanceof ServiceDefinition);
+		$definitions = $builder->findDefinitionByType(Presenter::class);
+		$presenters = [];
+
+		foreach ($definitions as $key => $presenter) {
 			$presenters[$key] = $presenter->getType();
 		}
 
-		$barDefinition = $builder->getDefinition('tracy.bar');
-		assert($barDefinition instanceof ServiceDefinition);
-		$barDefinition
+		$barDef = $builder->getServiceDefinition('tracy.bar');
+		$barDef
 			->addSetup('addPanel', [
 				new Statement(
 					NavigationPanel::class,
