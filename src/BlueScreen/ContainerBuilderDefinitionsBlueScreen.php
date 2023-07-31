@@ -11,8 +11,7 @@ use Tracy\Helpers;
 class ContainerBuilderDefinitionsBlueScreen
 {
 
-	/** @var ContainerBuilder */
-	private $builder;
+	private ContainerBuilder $builder;
 
 	public function __construct(ContainerBuilder $builder)
 	{
@@ -39,8 +38,8 @@ class ContainerBuilderDefinitionsBlueScreen
 		$parts = [];
 
 		// Single definition
-		preg_match("#Class .+ used in service '([a-zA-Z0-9_]+)' not found.#", $e->getMessage(), $matches);
-		if ($matches) {
+		$ret = preg_match("#Class .+ used in service '([a-zA-Z0-9_]+)' not found.#", $e->getMessage(), $matches);
+		if ($ret !== false) {
 			[, $serviceName] = $matches;
 			$parts[] = sprintf(
 				"<div><h3>Definition for '%s'</h3>%s</div>",

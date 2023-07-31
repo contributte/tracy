@@ -11,8 +11,7 @@ use Tracy\Helpers;
 class ContainerBuilderParametersBlueScreen
 {
 
-	/** @var ContainerBuilder */
-	private $builder;
+	private ContainerBuilder $builder;
 
 	public function __construct(ContainerBuilder $builder)
 	{
