@@ -19,7 +19,7 @@ class ContainerBuilderParametersBlueScreen
 	}
 
 	/**
-	 * @return string[]|null
+	 * @return array{tab: string, panel: string}|null
 	 */
 	public function __invoke(?Throwable $e): ?array
 	{

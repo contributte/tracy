@@ -12,7 +12,6 @@ require_once __DIR__ . '/../../bootstrap.php';
 Toolkit::test(static function (): void {
 	$rf = new ReflectionClass(Debugger::getBlueScreen());
 	$panelsrf = $rf->getProperty('panels');
-	$panelsrf->setAccessible(true);
 
 	Assert::count(0, $panelsrf->getValue(Debugger::getBlueScreen()));
 
