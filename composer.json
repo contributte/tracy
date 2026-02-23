@@ -20,7 +20,7 @@
   ],
   "require": {
     "php": ">=8.2",
-    "tracy/tracy": "^2.9.0"
+    "tracy/tracy": "^2.11.2"
   },
   "require-dev": {
     "nette/di": "^3.1.2",
