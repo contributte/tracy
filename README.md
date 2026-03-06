@@ -2,7 +2,7 @@
 
 <p align=center>
   <a href="https://github.com/contributte/tracy/actions"><img src="https://badgen.net/github/checks/contributte/tracy/master?tracy=300"></a>
-  <a href="https://coveralls.io/r/contributte/tracy"><img src="https://badgen.net/coveralls/c/github/contributte/tracy?tracy=300"></a>
+  <a href="https://codecov.io/gh/contributte/tracy"><img src="https://badgen.net/codecov/c/github/contributte/tracy?tracy=300"></a>
   <a href="https://packagist.org/packages/contributte/tracy"><img src="https://badgen.net/packagist/dm/contributte/tracy"></a>
   <a href="https://packagist.org/packages/contributte/tracy"><img src="https://badgen.net/packagist/v/contributte/tracy"></a>
 </p>
