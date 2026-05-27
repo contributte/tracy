@@ -4,6 +4,7 @@ namespace Contributte\Tracy\DI;
 
 use Contributte\Tracy\BlueScreen\ContainerBuilderDefinitionsBlueScreen;
 use Contributte\Tracy\BlueScreen\ContainerBuilderParametersBlueScreen;
+use Contributte\Tracy\BlueScreen\SanitizedTraceBlueScreen;
 use Nette\DI\CompilerExtension;
 use Tracy\Debugger;
 
@@ -16,6 +17,7 @@ class TracyBlueScreensExtension extends CompilerExtension
 
 		Debugger::getBlueScreen()->addPanel(new ContainerBuilderParametersBlueScreen($builder));
 		Debugger::getBlueScreen()->addPanel(new ContainerBuilderDefinitionsBlueScreen($builder));
+		Debugger::getBlueScreen()->addPanel(new SanitizedTraceBlueScreen());
 	}
 
 }

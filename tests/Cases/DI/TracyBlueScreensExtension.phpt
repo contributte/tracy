@@ -21,5 +21,5 @@ Toolkit::test(static function (): void {
 		})
 		->build();
 
-	Assert::count(2, $panelsrf->getValue(Debugger::getBlueScreen()));
+	Assert::count(3, $panelsrf->getValue(Debugger::getBlueScreen()));
 });
