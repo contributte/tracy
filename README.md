@@ -18,7 +18,16 @@
 Website 🚀 <a href="https://contributte.org">contributte.org</a> | Contact 👨🏻‍💻 <a href="https://f3l1x.io">f3l1x.io</a> | Twitter 🐦 <a href="https://twitter.com/contributte">@contributte</a>
 </p>
 
-## Usage
+Tuned Tracy Bars, panels and BlueScreen integrations for easy development.
+
+## Versions
+
+| State  | Version | Branch   | Nette | PHP     |
+|--------|---------|----------|-------|---------|
+| dev    | `^0.7`  | `master` | 3.1+  | `>=8.2` |
+| stable | `^0.6`  | `master` | 3.1+  | `>=8.1` |
+
+## Installation
 
 To install latest version of `contributte/tracy` use [Composer](https://getcomposer.org).
 
@@ -26,17 +35,33 @@ To install latest version of `contributte/tracy` use [Composer](https://getcompo
 composer require contributte/tracy
 ```
 
-## Documentation
+## Usage
 
-For details on how to use this package, check out our [documentation](.docs).
+### TracyBlueScreens
 
-## Versions
+`TracyBlueScreensExtension` adds a few BlueScreen panels for easier debugging.
 
-| State       | Version | Branch   | Nette | PHP     |
-|-------------|---------|----------|-------|---------|
-| dev         | `^0.7`  | `master` | 3.1+  | `>=8.1` |
-| stable      | `^0.6`  | `master` | 3.1+  | `>=8.1` |
+```neon
+extensions:
+	tracy.bluescreens: Contributte\Tracy\DI\TracyBlueScreensExtension
+```
 
+![Container Builder - parameters][container-builder-parameters]
+![Container Builder - definitions][container-builder-definitions]
+
+### Logger
+
+`LoggerExtension` replaces Tracy logger with `MultiLogger` so you can register additional logger services.
+
+```neon
+extensions:
+	tracy.logger: Contributte\Tracy\DI\LoggerExtension
+```
+
+Extra loggers can then be wired in your app and added to the multi logger.
+
+[container-builder-parameters]: .docs/assets/container-builder-parameters.png "Container Builder - parameters"
+[container-builder-definitions]: .docs/assets/container-builder-definitions.png "Container Builder - definitions"
 
 ## Development
 
