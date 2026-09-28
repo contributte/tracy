@@ -8,3 +8,7 @@ Makefile export-ignore
 phpstan.neon export-ignore
 README.md export-ignore
 ruleset.xml export-ignore
+AGENTS.md export-ignore
+CLAUDE.md export-ignore
+DESIGN.md export-ignore
+fxnorm.yml export-ignore
